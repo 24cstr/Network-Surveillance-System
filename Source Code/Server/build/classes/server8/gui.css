@@ -1,0 +1,43 @@
+.thebackground {
+    -fx-background-color : #78909C;
+    }
+
+.sectionTitle {
+    -fx-text-fill   : #01579B;
+    -fx-font-weight : bolder;
+    -fx-font-size   : 14px;
+    }
+
+.warningText {
+    -fx-fill : #0277BD;
+    }
+
+.inputSection {
+    -fx-background-color : #E1F5FE;
+    }
+
+.button {
+    -fx-background-color : #1ABC9C;
+    -fx-text-fill        : #E1F5FE;
+    -fx-font-weight      : 900;
+    }
+
+.button:hover {
+    -fx-background-color : #1DE9B6;
+    }
+	.theback{
+		-fx-background-color : #ECF0F1;
+	}
+	.width{
+		-fx-border-width : 25px;
+border-width: 15px;
+		
+	}
+ .tab *.tab-label {
+    -fx-rotate: 90;
+}
+
+.tab {
+    -fx-padding: 5em 1em 5em 1em;
+    -fx-focus-color: transparent;
+}

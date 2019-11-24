@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="server8.FXMLDocumentController">
+   <children>
+      <TabPane layoutX="4.0" layoutY="108.0" prefHeight="972.0" prefWidth="1913.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="108.0">
+        <tabs>
+          <Tab fx:id="home" onSelectionChanged="#hometabselection" text="Home">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="120.0" prefWidth="0.0">
+                     <children>
+                        <GridPane fx:id="bwmpane" layoutY="-1.0" prefHeight="944.0" prefWidth="1113.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="800.0" AnchorPane.topAnchor="0.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                        <Separator layoutX="1117.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="940.0" prefWidth="0.0" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="1117.0" AnchorPane.rightAnchor="796.0" AnchorPane.topAnchor="-1.0" />
+                        <AnchorPane layoutX="1121.0" layoutY="608.0" minHeight="0.0" minWidth="0.0" prefHeight="336.0" prefWidth="791.0">
+                           <children>
+                              <Label alignment="CENTER" layoutX="-1.0" layoutY="-3.0" prefHeight="35.0" prefWidth="546.0" text="Active Users" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-3.0">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="activeusers" layoutX="14.0" layoutY="47.0" prefHeight="275.0" prefWidth="769.0">
+                                 <columns>
+                                    <TableColumn fx:id="acuid" prefWidth="383.0" text="User ID" />
+                                    <TableColumn fx:id="acip" prefWidth="382.0" text="Current IP" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <Separator layoutX="1117.0" layoutY="596.0" prefHeight="0.0" prefWidth="799.0" />
+                        <TableView fx:id="Logstab" layoutX="1116.0" layoutY="2.0" prefHeight="592.0" prefWidth="797.0">
+                          <columns>
+                            <TableColumn fx:id="logc" editable="false" prefWidth="796.0" text="Events &amp; Logs" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Communication">
+               <content>
+                  <ScrollPane>
+                     <content>
+                        <AnchorPane fx:id="communication" prefHeight="337.0" prefWidth="307.0">
+                           <children>
+                              <TextArea fx:id="bmg" layoutX="176.0" layoutY="137.0" prefHeight="117.0" prefWidth="515.0" AnchorPane.bottomAnchor="701.0" AnchorPane.leftAnchor="176.0" AnchorPane.rightAnchor="1222.0" />
+                              <Label layoutX="213.0" layoutY="56.0" text="Broadcast Message">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="241.0" layoutY="641.0" text="Unicast message">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="231.0" layoutY="318.0" text="Multicast Message">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <TextArea fx:id="mmg" layoutX="166.0" layoutY="463.0" prefHeight="127.0" prefWidth="508.0" />
+                              <TextArea fx:id="amg" layoutX="964.0" layoutY="154.0" prefHeight="801.0" prefWidth="938.0" />
+                              <Label layoutX="65.0" layoutY="398.0" prefHeight="17.0" prefWidth="63.0" text="To:" />
+                              <Label layoutX="10.0" layoutY="477.0" prefHeight="25.0" prefWidth="141.0" text="Message:">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="1357.0" layoutY="33.0" prefHeight="45.0" prefWidth="326.0" text="Incoming Message:">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="142.0" prefHeight="25.0" prefWidth="157.0" text="Message:">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="umsg" layoutX="151.0" layoutY="716.0" prefWidth="150.0" />
+                              <Label layoutX="73.0" layoutY="720.0" prefHeight="17.0" prefWidth="56.0" text="To:" />
+                              <TextArea fx:id="umg" layoutX="182.0" layoutY="780.0" prefHeight="127.0" prefWidth="493.0" />
+                              <Label layoutX="21.0" layoutY="780.0" prefHeight="25.0" prefWidth="150.0" text="Message:">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Separator layoutX="7.0" layoutY="298.0" prefHeight="0.0" prefWidth="802.0" />
+                              <Separator layoutX="809.0" layoutY="25.0" orientation="VERTICAL" prefHeight="925.0" prefWidth="0.0" />
+                              <Separator layoutX="10.0" layoutY="618.0" prefHeight="0.0" prefWidth="802.0" />
+                              <Label layoutX="857.0" layoutY="164.0" text="Message:">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </content>
+            </Tab>
+            <Tab fx:id="filetransfer" text="User Accounts">
+               <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <TabPane layoutY="3.0" prefHeight="942.0" prefWidth="1913.0" side="LEFT" styleClass="tab" stylesheets="@gui.css" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="User Details         ">
+                              <content>
+                                    <ScrollPane>
+                                       <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="844.0" prefWidth="1760.0">
+                                             <children>
+                                                <Label alignment="CENTER" layoutY="11.0" prefHeight="70.0" prefWidth="1759.0" text="User Details">
+                                                   <font>
+                                                      <Font size="48.0" />
+                                                   </font>
+                                                </Label>
+                                                <TableView fx:id="usedatat" editable="true" layoutX="9.0" layoutY="102.0" prefHeight="706.0" prefWidth="1724.0" tableMenuButtonVisible="true">
+                                                  <columns>
+                                                    <TableColumn fx:id="tuseid" prefWidth="225.0" text="User ID" />
+                                                    <TableColumn fx:id="tname" minWidth="0.0" prefWidth="301.0" text="Name" />
+                                                      <TableColumn fx:id="tmail" prefWidth="328.0" text="Email ID" />
+                                                      <TableColumn fx:id="tmob" prefWidth="192.0" text="Mobile No. " />
+                                                      <TableColumn fx:id="tpriv" prefWidth="140.0" text="Privilege Level" />
+                                                      <TableColumn fx:id="tcur" prefWidth="269.0" text="Current Stutus" />
+                                                      <TableColumn fx:id="tebut" prefWidth="131.0" text="Edit User" />
+                                                      <TableColumn fx:id="tdbut" minWidth="0.0" prefWidth="128.0" text="Delete user" />
+                                                  </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </ScrollPane>
+                              </content>
+                            </Tab>
+                              <Tab text="New Registrations      ">
+                                 <content>
+                                    <AnchorPane>
+                                       <children>
+                                        <AnchorPane layoutX="146.0" layoutY="11.0" minHeight="0.0" minWidth="0.0" prefHeight="788.0" prefWidth="768.0">
+                                             <children>
+                                                <Label layoutX="126.0" layoutY="201.0" prefHeight="17.0" prefWidth="95.0" text="Name:">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="127.0" layoutY="264.0" prefHeight="17.0" prefWidth="94.0" text="User ID:">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="124.0" layoutY="334.0" prefHeight="17.0" prefWidth="101.0" text="Email ID:">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="124.0" layoutY="422.0" prefHeight="17.0" prefWidth="147.0" text="Mobile number :">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="127.0" layoutY="515.0" prefHeight="17.0" prefWidth="158.0" text="Privilege Level :">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button layoutX="64.0" layoutY="654.0" mnemonicParsing="false" onMouseClicked="#validater" prefHeight="68.0" prefWidth="151.0" text="Validate">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button layoutX="559.0" layoutY="644.0" mnemonicParsing="false" onMouseClicked="#rejectr" prefHeight="68.0" prefWidth="143.0" text="Reject">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                </Button>
+                                                <Label alignment="CENTER" layoutY="-2.0" prefHeight="55.0" prefWidth="769.0" text="User Registration Requests">
+                                                   <font>
+                                                      <Font size="27.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button layoutX="285.0" layoutY="648.0" mnemonicParsing="false" onMouseClicked="#openreq" prefHeight="68.0" prefWidth="227.0" text="Open New Requests" AnchorPane.leftAnchor="285.0" AnchorPane.topAnchor="648.0">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                </Button>
+                                                <TextField fx:id="priv" layoutX="276.0" layoutY="513.0" prefHeight="25.0" prefWidth="246.0" promptText="Enter Privilege Level 1 - 4" />
+                                                <Label fx:id="fna" layoutX="339.0" layoutY="203.0" />
+                                                <Label fx:id="un" layoutX="339.0" layoutY="266.0" />
+                                                <Label fx:id="eid" layoutX="339.0" layoutY="336.0" />
+                                                <Label fx:id="mno" layoutX="339.0" layoutY="424.0" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab text="Unlock Code Generator">
+                                 <content>
+                                    <AnchorPane>
+                                       <children>
+                                        <AnchorPane layoutX="574.0" layoutY="174.0" minHeight="0.0" minWidth="0.0" prefHeight="474.0" prefWidth="613.0">
+                                             <children>
+                                                <Label alignment="CENTER" layoutY="10.0" prefHeight="65.0" prefWidth="613.0" text="Unlock Code Generator" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="40.0" layoutY="132.0" text="Choose User ID:" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="132.0">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <ChoiceBox fx:id="unccdgen" layoutX="219.0" layoutY="130.0" prefHeight="25.0" prefWidth="189.0" AnchorPane.leftAnchor="219.0" AnchorPane.topAnchor="130.0" />
+                                                <Label layoutX="46.0" layoutY="227.0" prefHeight="40.0" prefWidth="111.0" text="Unlock Code:">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="uncd" layoutX="219.0" layoutY="235.0" prefHeight="25.0" prefWidth="286.0" promptText="Unlock Code Will Be Shown Here" AnchorPane.leftAnchor="219.0" AnchorPane.topAnchor="235.0" />
+                                                <Button layoutX="128.0" layoutY="368.0" mnemonicParsing="false" onMouseClicked="#genuncd" text="Generate Unlock Code">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Advance Options">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane layoutX="5.0" layoutY="5.0" prefHeight="949.0" prefWidth="1885.0" rotateGraphic="true" side="LEFT" styleClass="tab" stylesheets="@gui.css" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab fx:id="packetmonitor" text="Packet Monitor">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" stylesheets="@gui.css">
+                                       <children>
+                                          <Button fx:id="pstart" layoutX="23.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#startlivemonitoring" prefHeight="25.0" prefWidth="68.0" text="Start" />
+                                          <Button fx:id="pstop" layoutX="135.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#stoplivemonitoring" prefHeight="25.0" prefWidth="82.0" text="Stop" />
+                                          <TableView fx:id="ptable" editable="true" layoutX="15.0" layoutY="56.0" prefHeight="801.0" prefWidth="1862.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="-11.0" AnchorPane.topAnchor="56.0">
+                                            <columns>
+                                              <TableColumn fx:id="pno" prefWidth="101.99996948242188" text="Packet no." />
+                                              <TableColumn fx:id="time" prefWidth="146.0" text="Time" />
+                                                <TableColumn fx:id="plen" prefWidth="171.0" text="Packet Length" />
+                                                <TableColumn fx:id="proto" minWidth="0.0" prefWidth="217.0" text="Protocol" />
+                                                <TableColumn fx:id="smac" prefWidth="169.0" text="Source MAC" />
+                                                <TableColumn fx:id="sip" prefWidth="235.0" text="Source IP" />
+                                                <TableColumn fx:id="sp" prefWidth="157.0" text="Souce Port" />
+                                                <TableColumn fx:id="dmac" prefWidth="225.0" text="Destination MAC" />
+                                                <TableColumn fx:id="dip" minWidth="0.0" prefWidth="278.0" text="Destination IP" />
+                                                <TableColumn fx:id="dp" prefWidth="184.0" text="Destination Port" />
+                                            </columns>
+                                          </TableView>
+                                          <Button fx:id="showolddata" layoutX="706.0" layoutY="6.0" mnemonicParsing="false" onMouseClicked="#showtotalcapturedata" prefHeight="42.0" prefWidth="210.0" text="See Whole Old Data" AnchorPane.rightAnchor="779.0" AnchorPane.topAnchor="6.0" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab text="Iptables Rules   ">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="59.0" layoutY="85.0" prefHeight="17.0" prefWidth="224.0" text="Add a custom rule:" />
+                                          <TextField fx:id="crule" layoutX="286.0" layoutY="81.0" prefHeight="26.0" prefWidth="631.0" />
+                                          <Label layoutX="60.0" layoutY="189.0" prefHeight="17.0" prefWidth="135.0" text="Rule description:" />
+                                          <TextArea fx:id="cdesc" layoutX="293.0" layoutY="175.0" prefHeight="159.0" prefWidth="760.0" />
+                                          <Button layoutX="591.0" layoutY="494.0" mnemonicParsing="false" onMouseClicked="#addcrule" prefHeight="25.0" prefWidth="173.0" text="Add" />
+                                          <Label fx:id="coutput" layoutX="293.0" layoutY="371.0" prefHeight="76.0" prefWidth="763.0" />
+                                          <Label layoutX="90.0" layoutY="395.0" prefHeight="29.0" prefWidth="78.0" text="Output :" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </Tab>
+                              <Tab text="Admin password">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="549.0" prefWidth="1029.0">
+                                       <children>
+                                          <Label layoutX="185.0" layoutY="88.0" prefHeight="17.0" prefWidth="158.0" text="Enter old password" />
+                                          <Label layoutX="186.0" layoutY="170.0" prefHeight="16.0" prefWidth="154.0" text="Enter new password" />
+                                          <Label layoutX="187.0" layoutY="257.0" prefHeight="16.0" prefWidth="203.0" text="Confirm new password" />
+                                          <PasswordField fx:id="nps1" layoutX="433.0" layoutY="168.0" />
+                                          <PasswordField fx:id="nps2" layoutX="433.0" layoutY="254.0" />
+                                          <PasswordField fx:id="currp" layoutX="432.0" layoutY="85.0" />
+                                          <Button fx:id="adpcb" layoutX="334.0" layoutY="380.0" mnemonicParsing="false" onMouseClicked="#chngadminpass" text="Change" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Notfication Center">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="954.0" prefWidth="1928.0">
+                     <children>
+                      <AnchorPane fx:id="notificationpane" layoutX="52.0" layoutY="212.0" prefHeight="839.0" prefWidth="1910.0">
+                           <children>
+                              <Label layoutX="9.0" layoutY="42.0" prefHeight="40.0" prefWidth="555.0" stylesheets="@gui.css" text="Update the data that has to be mailed " underline="true">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                              <CheckBox fx:id="bu" layoutX="23.0" layoutY="110.0" mnemonicParsing="false" onAction="#notiac" prefHeight="61.0" prefWidth="250.0" selected="true" styleClass="button1" text="Bandwidth Usage">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </CheckBox>
+                              <CheckBox fx:id="st" layoutX="350.0" layoutY="108.0" mnemonicParsing="false" onAction="#notiac" prefHeight="61.0" prefWidth="237.0" selected="true" styleClass="button1" text="Session Time ">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </CheckBox>
+                              <CheckBox fx:id="maw" layoutX="22.0" layoutY="206.0" mnemonicParsing="false" onAction="#notiac" prefHeight="61.0" prefWidth="310.0" selected="true" styleClass="button1" text="Most Accessed Website">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </CheckBox>
+                              <CheckBox fx:id="at" layoutX="351.0" layoutY="206.0" mnemonicParsing="false" onAction="#notiac" prefHeight="61.0" prefWidth="188.0" selected="true" styleClass="button1" text="Alerts">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </CheckBox>
+                              <Separator layoutX="-4.0" layoutY="621.0" prefHeight="0.0" prefWidth="944.0" />
+                              <TableView fx:id="ememtab" layoutX="-3.0" layoutY="420.0" prefHeight="300.0" prefWidth="1913.0">
+                                 <columns>
+                                    <TableColumn fx:id="ename" prefWidth="496.0" text="Name" />
+                                    <TableColumn fx:id="emailid" prefWidth="483.0" text="Email ID" />
+                                    <TableColumn fx:id="ealert" prefWidth="933.0" text="Alerts" />
+                                 </columns>
+                              </TableView>
+                              <Separator layoutX="790.0" layoutY="30.0" orientation="VERTICAL" prefHeight="295.0" prefWidth="7.0" />
+                              <Label layoutX="814.0" layoutY="118.0" text="Name" />
+                              <Label layoutX="808.0" layoutY="220.0" text="Email ID" />
+                              <TextField fx:id="nm" layoutX="898.0" layoutY="114.0" />
+                              <TextField fx:id="emid" layoutX="903.0" layoutY="216.0" />
+                              <Button fx:id="ademb" layoutX="887.0" layoutY="301.0" mnemonicParsing="false" onMouseClicked="#addemem" prefHeight="48.0" prefWidth="133.0" text="ADD" />
+                              <Label layoutX="814.0" layoutY="43.0" text="Add a Member to Mailing List" underline="true">
+                                 <font>
+                                    <Font size="27.0" />
+                                 </font>
+                              </Label>
+                              <Separator layoutX="1276.0" layoutY="37.0" orientation="VERTICAL" prefHeight="291.0" prefWidth="0.0" />
+                              <TableView fx:id="emailoptab" layoutX="571.0" layoutY="39.0" prefHeight="279.0" prefWidth="200.0">
+                                <columns>
+                                  <TableColumn fx:id="op" prefWidth="199.0" text="Current Status" />
+                                </columns>
+                              </TableView>
+                              <ComboBox fx:id="ememn" layoutX="1481.0" layoutY="114.0" prefWidth="150.0" />
+                              <Label layoutX="1334.0" layoutY="43.0" text="Remove a Member to Mailing List" underline="true">
+                                 <font>
+                                    <Font size="27.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="1358.0" layoutY="118.0" text="Name" />
+                              <Button layoutX="1415.0" layoutY="213.0" mnemonicParsing="false" onMouseClicked="#rememem" prefHeight="48.0" prefWidth="133.0" text="Remove" />
+                              <Button layoutX="593.0" layoutY="337.0" mnemonicParsing="false" onMouseClicked="#sendnow" prefHeight="37.0" prefWidth="157.0" text="Send mail now" />
+                              <Button alignment="CENTER" contentDisplay="CENTER" layoutX="263.0" layoutY="313.0" mnemonicParsing="false" onMouseClicked="#chngmailtym" prefHeight="48.0" prefWidth="87.0" text="Change Mail  Time Period" wrapText="true" />
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="638.0" layoutY="11.0" prefHeight="70.0" prefWidth="437.0" text="Mail Notifications">
+                           <font>
+                              <Font size="48.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="638.0" layoutY="68.0" prefHeight="2.0" prefWidth="375.0" />
+                        <ToggleButton fx:id="enadisabutton" layoutX="642.0" layoutY="97.0" mnemonicParsing="false" onAction="#notifyenadis" prefHeight="79.0" prefWidth="360.0" selected="true" text="Enabled">
+                           <font>
+                              <Font size="51.0" />
+                           </font>
+                        </ToggleButton>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Access Control">
+               <content>
+                  <AnchorPane fx:id="glyph">
+                     <children>
+                      <AnchorPane layoutX="-1.0" layoutY="1.0" minHeight="0.0" minWidth="0.0" prefHeight="942.0" prefWidth="1913.0" styleClass="thebackground">
+                           <children>
+                              <Button fx:id="b1" layoutX="214.0" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#webblockclick" prefHeight="25.0" prefWidth="182.0" stylesheets="@gui.css" text="Block" textOverrun="CLIP" />
+                              <Label layoutX="9.0" layoutY="208.0" prefHeight="19.0" prefWidth="140.0" text="Website Name  :">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <ChoiceBox fx:id="webtypes" layoutX="179.0" layoutY="435.0" onMouseMoved="#chckfrcustom" prefHeight="25.0" prefWidth="252.0">
+                                 <contextMenu>
+                                    <ContextMenu>
+                                      <items>
+                                        <MenuItem mnemonicParsing="false" text="Social Media" />
+                                          <MenuItem mnemonicParsing="false" text="Adult" />
+                                          <MenuItem mnemonicParsing="false" text="other" />
+                                      </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </ChoiceBox>
+                              <Label layoutX="143.0" layoutY="38.0" text="Block Website">
+                                 <font>
+                                    <Font size="29.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="437.0" prefHeight="19.0" prefWidth="165.0" text="Website Category:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="38.0" layoutY="113.0" text="Select Users:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <ChoiceBox fx:id="bwuser" layoutX="173.0" layoutY="111.0" prefHeight="25.0" prefWidth="254.0">
+                                 <contextMenu>
+                                    <ContextMenu>
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" text="Social Media" />
+                                          <MenuItem mnemonicParsing="false" text="Adult" />
+                                          <MenuItem mnemonicParsing="false" text="other" />
+                                       </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </ChoiceBox>
+                              <Separator layoutX="664.0" layoutY="12.0" orientation="VERTICAL" prefHeight="583.0" prefWidth="0.0" />
+                              <Label layoutX="833.0" layoutY="38.0" text="Unblock Website">
+                                 <font>
+                                    <Font size="29.0" />
+                                 </font>
+                              </Label>
+                              <TextArea fx:id="webname" layoutX="175.0" layoutY="208.0" prefHeight="200.0" prefWidth="447.0" promptText="Enter the name of website you want to block ( Please hit Enter key every time if you want to add multiple website )" />
+                              <ChoiceBox fx:id="ubwuser" layoutX="830.0" layoutY="101.0" prefHeight="25.0" prefWidth="254.0">
+                                 <contextMenu>
+                                    <ContextMenu>
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" text="Social Media" />
+                                          <MenuItem mnemonicParsing="false" text="Adult" />
+                                          <MenuItem mnemonicParsing="false" text="other" />
+                                       </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </ChoiceBox>
+                              <Label layoutX="698.0" layoutY="103.0" text="Select Users:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="692.0" layoutY="219.0" text="Select Website:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <ChoiceBox fx:id="webtypes111" layoutX="833.0" layoutY="217.0" onMouseClicked="#loadweb" prefHeight="25.0" prefWidth="254.0">
+                                 <contextMenu>
+                                    <ContextMenu>
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" text="Social Media" />
+                                          <MenuItem mnemonicParsing="false" text="Adult" />
+                                          <MenuItem mnemonicParsing="false" text="other" />
+                                       </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </ChoiceBox>
+                              <Button layoutX="840.0" layoutY="383.0" mnemonicParsing="false" onMouseClicked="#unlockweb" prefHeight="25.0" prefWidth="157.0" stylesheets="@gui.css" text="Unblock" />
+                              <Separator layoutX="1264.0" layoutY="11.0" orientation="VERTICAL" prefHeight="584.0" prefWidth="0.0" />
+                              <Label layoutX="1472.0" layoutY="38.0" text="Block/Unblock user">
+                                 <font>
+                                    <Font size="29.0" />
+                                 </font>
+                              </Label>
+                              <RadioButton fx:id="rbblcu" layoutX="1481.0" layoutY="128.0" mnemonicParsing="false" selected="true" text="Block">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="blunuser" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton layoutX="1632.0" layoutY="128.0" mnemonicParsing="false" text="Unblock" toggleGroup="$blunuser">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </RadioButton>
+                              <Label layoutX="1320.0" layoutY="128.0" text="Select Action:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="bubuser" layoutX="1513.0" layoutY="242.0" onMouseClicked="#loadbub" prefWidth="150.0" />
+                              <Label layoutX="1330.0" layoutY="244.0" text="Select Users:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="1495.0" layoutY="383.0" mnemonicParsing="false" onMouseClicked="#usblckunblck" stylesheets="@gui.css" text="Block/Unblock" />
+                              <Separator layoutY="594.0" prefHeight="0.0" prefWidth="1913.0" />
+                              <TableView fx:id="acctab" layoutX="-2.0" layoutY="609.0" prefHeight="325.0" prefWidth="1888.0">
+                                <columns>
+                                  <TableColumn fx:id="acctabu" prefWidth="411.0" text="Username" />
+                                  <TableColumn fx:id="acctabl" minWidth="0.0" prefWidth="388.0" text="Locked" />
+                                    <TableColumn fx:id="acctabb" minWidth="0.0" prefWidth="1078.0" text="Blocked Websites" />
+                                </columns>
+                              </TableView>
+                              <TextField fx:id="custtyp" layoutX="447.0" layoutY="435.0" prefHeight="25.0" prefWidth="200.0" promptText="Please Specify The Type " visible="false" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Privilege Level">
+               <content>
+                  <AnchorPane fx:id="plevel" prefHeight="915.0" prefWidth="1913.0">
+                     <children>
+                        <Separator layoutX="993.0" layoutY="1.0" orientation="VERTICAL" prefHeight="939.0" prefWidth="0.0" />
+                        <Separator layoutX="-1.0" layoutY="464.0" prefHeight="0.0" prefWidth="1913.0" />
+                        <Label layoutX="435.0" layoutY="14.0" text="Level 1 Privilege" underline="true">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="1353.0" layoutY="30.0" text="Level 2 Privilege" underline="true">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="1363.0" layoutY="485.0" text="Level 4 Privilege" underline="true">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="435.0" layoutY="485.0" text="Level 3 Privilege" underline="true">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="pl1_table" layoutX="501.0" layoutY="89.0" prefHeight="361.0" prefWidth="479.0">
+                           <columns>
+                              <TableColumn fx:id="pl1_web" prefWidth="490.0" text="Blocked Website" />
+                           </columns>
+                           <contextMenu>
+                              <ContextMenu>
+                                <items>
+                                  <MenuItem mnemonicParsing="false" onAction="#remvfrmprl1" text="Remove this website" />
+                                </items>
+                              </ContextMenu>
+                           </contextMenu>
+                        </TableView>
+                        <Label layoutX="13.0" layoutY="119.0" prefHeight="48.0" prefWidth="277.0" text="Current Allocated Bandwidth :">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="339.0" layoutY="135.0" text="MB" />
+                        <Label layoutX="14.0" layoutY="243.0" prefHeight="25.0" prefWidth="170.0" text="Add website To List:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="pl1" layoutX="178.0" layoutY="243.0" prefHeight="26.0" prefWidth="257.0" />
+                        <Button layoutX="180.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#pl1_add" prefHeight="48.0" prefWidth="122.0" text="Add" />
+                        <Button layoutX="1288.0" layoutY="352.0" mnemonicParsing="false" onMouseClicked="#pl2_add" prefHeight="48.0" prefWidth="122.0" text="Add" />
+                        <Button layoutX="1288.0" layoutY="795.0" mnemonicParsing="false" onMouseClicked="#pl4_add" prefHeight="48.0" prefWidth="122.0" text="Add" />
+                        <Button layoutX="292.0" layoutY="830.0" mnemonicParsing="false" onMouseClicked="#pl3_add" prefHeight="48.0" prefWidth="122.0" text="Add" />
+                        <TextField fx:id="pl4" layoutX="1197.0" layoutY="735.0" prefHeight="26.0" prefWidth="241.0" />
+                        <TextField fx:id="pl2" layoutX="1202.0" layoutY="292.0" prefHeight="26.0" prefWidth="231.0" />
+                        <TextField fx:id="pl3" layoutX="206.0" layoutY="760.0" prefHeight="26.0" prefWidth="241.0" />
+                        <Label layoutX="1006.0" layoutY="735.0" prefHeight="25.0" prefWidth="186.0" text="Add website To List:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="1005.0" layoutY="292.0" prefHeight="25.0" prefWidth="190.0" text="Add website To List:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="760.0" prefHeight="25.0" prefWidth="190.0" text="Add website To List:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="1012.0" layoutY="591.0" prefHeight="48.0" prefWidth="248.0" text="Current Allocated Bandwidth :">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="1022.0" layoutY="138.0" prefHeight="48.0" prefWidth="267.0" text="Current Allocated Bandwidth :">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="13.0" layoutY="633.0" prefHeight="48.0" prefWidth="266.0" text="Current Allocated Bandwidth :">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="p4mb" layoutX="1264.0" layoutY="607.0" text="400" />
+                        <Label fx:id="p3mb" layoutX="287.0" layoutY="648.0" text="300" />
+                        <Label fx:id="p2mb" layoutX="1295.0" layoutY="152.0" text="200" />
+                        <TableView fx:id="pl3_table" layoutX="500.0" layoutY="555.0" prefHeight="374.0" prefWidth="479.0">
+                          <columns>
+                            <TableColumn fx:id="pl3_web" prefWidth="478.0" text="Blocked Website" />
+                          </columns>
+                           <contextMenu>
+                              <ContextMenu>
+                                <items>
+                                  <MenuItem mnemonicParsing="false" onAction="#remvfrmprl3" text="Remove this website" />
+                                </items>
+                              </ContextMenu>
+                           </contextMenu>
+                        </TableView>
+                        <TableView fx:id="pl2_table" layoutX="1450.0" layoutY="84.0" prefHeight="369.0" prefWidth="453.0">
+                          <columns>
+                            <TableColumn fx:id="pl2_web" prefWidth="452.0" text="Blocked Website" />
+                          </columns>
+                           <contextMenu>
+                              <ContextMenu>
+                                <items>
+                                  <MenuItem mnemonicParsing="false" onAction="#remvfrmprl2" text="Remove this website" />
+                                </items>
+                              </ContextMenu>
+                           </contextMenu>
+                        </TableView>
+                        <TableView fx:id="pl4_table" layoutX="1452.0" layoutY="556.0" prefHeight="376.0" prefWidth="452.0">
+                          <columns>
+                            <TableColumn fx:id="pl4_web" prefWidth="447.0" text="Blocked Website" />
+                          </columns>
+                           <contextMenu>
+                              <ContextMenu>
+                                <items>
+                                  <MenuItem mnemonicParsing="false" onAction="#remvfrmprl4" text="Remove this website" />
+                                </items>
+                              </ContextMenu>
+                           </contextMenu>
+                        </TableView>
+                        <Label fx:id="p1mb" layoutX="292.0" layoutY="135.0" prefHeight="17.0" prefWidth="46.0" text="100" />
+                        <Label layoutX="356.0" layoutY="648.0" text="MB" />
+                        <Label layoutX="1337.0" layoutY="152.0" text="MB" />
+                        <Label layoutX="1317.0" layoutY="607.0" text="MB" />
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
+            <Tab text="Services">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox fx:id="ser1" layoutX="138.0" layoutY="127.0" mnemonicParsing="false" onAction="#serviceblock1" text="FTP">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="ser2" layoutX="138.0" layoutY="167.0" mnemonicParsing="false" onAction="#serviceblock2" text="SSH">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="ser3" layoutX="138.0" layoutY="210.0" mnemonicParsing="false" onAction="#serviceblock3" text="SMTP">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="ser5" layoutX="137.0" layoutY="303.0" mnemonicParsing="false" onAction="#serviceblock5" text="DNS">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="ser4" layoutX="138.0" layoutY="252.0" mnemonicParsing="false" onAction="#serviceblock4" text="TELNET">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="ser7" layoutX="135.0" layoutY="405.0" mnemonicParsing="false" onAction="#serviceblock7" text="POP3">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="ser6" layoutX="136.0" layoutY="352.0" mnemonicParsing="false" onAction="#serviceblock6" text="TFTP">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="ser8" layoutX="133.0" layoutY="455.0" mnemonicParsing="false" onAction="#serviceblock8" text="IMAP">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="ser10" layoutX="130.0" layoutY="555.0" mnemonicParsing="false" onAction="#serviceblock10" text="HTTPS">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="ser9" layoutX="133.0" layoutY="501.0" mnemonicParsing="false" onAction="#serviceblock9" text="HTTP">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </CheckBox>
+                        <TableView fx:id="ser_table" layoutX="388.0" layoutY="106.0" prefHeight="493.0" prefWidth="662.0">
+                          <columns>
+                            <TableColumn fx:id="ser_table_1" prefWidth="425.0" text="blocked services" />
+                              <TableColumn fx:id="ser_table_2" prefWidth="236.0" text="Port Number" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Statistics">
+              <content>
+                <AnchorPane fx:id="statistics" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Separator layoutX="991.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="946.0" prefWidth="0.0" />
+                        <Separator layoutX="1.0" layoutY="479.0" prefHeight="0.0" prefWidth="1913.0" />
+                        <ListView fx:id="weblv" layoutX="25.0" layoutY="160.0" prefHeight="312.0" prefWidth="950.0" />
+                        <ComboBox fx:id="tpall" layoutX="115.0" layoutY="97.0" prefWidth="150.0" />
+                        <Button fx:id="refreshws" layoutX="369.0" layoutY="97.0" mnemonicParsing="false" text="Refresh" />
+                        <Label layoutX="392.0" layoutY="24.0" prefHeight="32.0" prefWidth="247.0" text="Website Statistics" underline="true">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="393.0" layoutY="518.0" prefHeight="32.0" prefWidth="263.0" text="Packets Statistics" underline="true">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="cpn" layoutX="392.0" layoutY="617.0" prefHeight="17.0" prefWidth="170.0" />
+                        <Label fx:id="cps" layoutX="392.0" layoutY="694.0" prefHeight="17.0" prefWidth="174.0" />
+                        <Label layoutX="197.0" layoutY="617.0" text="Captured Packets:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="197.0" layoutY="694.0" text="Captured packets Size:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="1370.0" layoutY="24.0" text="Bandwidth Usage" underline="true">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="butable" layoutX="994.0" layoutY="160.0" prefHeight="773.0" prefWidth="910.0">
+                          <columns>
+                            <TableColumn fx:id="bun" prefWidth="147.0" text="Username" />
+                            <TableColumn fx:id="bus" prefWidth="161.0" text="Usage" />
+                              <TableColumn fx:id="bmax" prefWidth="217.0" text="Maximum Allowed Usage" />
+                              <TableColumn fx:id="curses" prefWidth="199.0" text="Current Session Time" />
+                              <TableColumn fx:id="tses" prefWidth="185.0" text="Total Session Time" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1187.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label alignment="CENTER" layoutX="-1.0" layoutY="47.0" prefHeight="36.0" prefWidth="1920.0" text="NETWORK SURVEILLANCE SERVER" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="47.0">
+         <font>
+            <Font name="Arial" size="32.0" />
+         </font>
+      </Label>
+   </children>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
+</AnchorPane>

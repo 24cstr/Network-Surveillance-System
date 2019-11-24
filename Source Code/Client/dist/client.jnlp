@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="client.jnlp">
+  <information>
+    <title>client</title>
+    <vendor>gunjan bhatt</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" java-vm-args="-Djava.library.path="C:\Users\Acer\Desktop\Project\64-bit\jnetpcap-1.4.r1425-1.win64\jnetpcap-1.4.r1425" "  href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="client.jar" size="39662" download="eager" />
+    <jar href="lib\controlsfx-8.40.10.jar" size="954085" download="eager" />
+    <jar href="lib\jnetpcap.jar" size="424293" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="client" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="client.Client"  name="client" />
+  <update check="always"/>
+</jnlp>

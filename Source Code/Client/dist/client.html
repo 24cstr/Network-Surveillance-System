@@ -1,0 +1,47 @@
+<html><head>
+  <SCRIPT src="./web-files/dtjava.js"></SCRIPT>
+<script>
+    function launchApplication(jnlpfile) {
+        dtjava.launch(            {
+                url : 'client.jnlp',
+                jnlp_content : 'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxqbmxwIHNwZWM9IjEuMCIgeG1sbnM6amZ4PSJodHRwOi8vamF2YWZ4LmNvbSIgaHJlZj0iY2xpZW50LmpubHAiPg0KICA8aW5mb3JtYXRpb24+DQogICAgPHRpdGxlPmNsaWVudDwvdGl0bGU+DQogICAgPHZlbmRvcj5ndW5qYW4gYmhhdHQ8L3ZlbmRvcj4NCiAgICA8ZGVzY3JpcHRpb24+bnVsbDwvZGVzY3JpcHRpb24+DQogICAgPG9mZmxpbmUtYWxsb3dlZC8+DQogIDwvaW5mb3JtYXRpb24+DQogIDxyZXNvdXJjZXM+DQogICAgPGoyc2UgdmVyc2lvbj0iMS42KyIgamF2YS12bS1hcmdzPSItRGphdmEubGlicmFyeS5wYXRoPSJDOlxVc2Vyc1xBY2VyXERlc2t0b3BcUHJvamVjdFw2NC1iaXRcam5ldHBjYXAtMS40LnIxNDI1LTEud2luNjRcam5ldHBjYXAtMS40LnIxNDI1IiAiICBocmVmPSJodHRwOi8vamF2YS5zdW4uY29tL3Byb2R1Y3RzL2F1dG9kbC9qMnNlIi8+DQogICAgPGphciBocmVmPSJjbGllbnQuamFyIiBzaXplPSIzOTY2MiIgZG93bmxvYWQ9ImVhZ2VyIiAvPg0KICAgIDxqYXIgaHJlZj0ibGliXGNvbnRyb2xzZngtOC40MC4xMC5qYXIiIHNpemU9Ijk1NDA4NSIgZG93bmxvYWQ9ImVhZ2VyIiAvPg0KICAgIDxqYXIgaHJlZj0ibGliXGpuZXRwY2FwLmphciIgc2l6ZT0iNDI0MjkzIiBkb3dubG9hZD0iZWFnZXIiIC8+DQogIDwvcmVzb3VyY2VzPg0KICA8YXBwbGV0LWRlc2MgIHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBtYWluLWNsYXNzPSJjb20uamF2YWZ4Lm1haW4uTm9KYXZhRlhGYWxsYmFjayIgIG5hbWU9ImNsaWVudCIgPg0KICAgIDxwYXJhbSBuYW1lPSJyZXF1aXJlZEZYVmVyc2lvbiIgdmFsdWU9IjguMCsiLz4NCiAgPC9hcHBsZXQtZGVzYz4NCiAgPGpmeDpqYXZhZngtZGVzYyAgd2lkdGg9IjgwMCIgaGVpZ2h0PSI2MDAiIG1haW4tY2xhc3M9ImNsaWVudC5DbGllbnQiICBuYW1lPSJjbGllbnQiIC8+DQogIDx1cGRhdGUgY2hlY2s9ImFsd2F5cyIvPg0KPC9qbmxwPg0K'
+            },
+            {
+                javafx : '8.0+',
+                jvmargs : '-Djava.library.path="C:\Users\Acer\Desktop\Project\64-bit\jnetpcap-1.4.r1425-1.win64\jnetpcap-1.4.r1425" '
+            },
+            {}
+        );
+        return false;
+    }
+</script>
+
+<script>
+    function javafxEmbedclient() {
+        dtjava.embed(
+            {
+                id : 'client',
+                url : 'client.jnlp',
+                placeholder : 'javafx-app-placeholder',
+                width : '800',
+                height : '600',
+                jnlp_content : 'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxqbmxwIHNwZWM9IjEuMCIgeG1sbnM6amZ4PSJodHRwOi8vamF2YWZ4LmNvbSIgaHJlZj0iY2xpZW50LmpubHAiPg0KICA8aW5mb3JtYXRpb24+DQogICAgPHRpdGxlPmNsaWVudDwvdGl0bGU+DQogICAgPHZlbmRvcj5ndW5qYW4gYmhhdHQ8L3ZlbmRvcj4NCiAgICA8ZGVzY3JpcHRpb24+bnVsbDwvZGVzY3JpcHRpb24+DQogICAgPG9mZmxpbmUtYWxsb3dlZC8+DQogIDwvaW5mb3JtYXRpb24+DQogIDxyZXNvdXJjZXM+DQogICAgPGoyc2UgdmVyc2lvbj0iMS42KyIgamF2YS12bS1hcmdzPSItRGphdmEubGlicmFyeS5wYXRoPSJDOlxVc2Vyc1xBY2VyXERlc2t0b3BcUHJvamVjdFw2NC1iaXRcam5ldHBjYXAtMS40LnIxNDI1LTEud2luNjRcam5ldHBjYXAtMS40LnIxNDI1IiAiICBocmVmPSJodHRwOi8vamF2YS5zdW4uY29tL3Byb2R1Y3RzL2F1dG9kbC9qMnNlIi8+DQogICAgPGphciBocmVmPSJjbGllbnQuamFyIiBzaXplPSIzOTY2MiIgZG93bmxvYWQ9ImVhZ2VyIiAvPg0KICAgIDxqYXIgaHJlZj0ibGliXGNvbnRyb2xzZngtOC40MC4xMC5qYXIiIHNpemU9Ijk1NDA4NSIgZG93bmxvYWQ9ImVhZ2VyIiAvPg0KICAgIDxqYXIgaHJlZj0ibGliXGpuZXRwY2FwLmphciIgc2l6ZT0iNDI0MjkzIiBkb3dubG9hZD0iZWFnZXIiIC8+DQogIDwvcmVzb3VyY2VzPg0KICA8YXBwbGV0LWRlc2MgIHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBtYWluLWNsYXNzPSJjb20uamF2YWZ4Lm1haW4uTm9KYXZhRlhGYWxsYmFjayIgIG5hbWU9ImNsaWVudCIgPg0KICAgIDxwYXJhbSBuYW1lPSJyZXF1aXJlZEZYVmVyc2lvbiIgdmFsdWU9IjguMCsiLz4NCiAgPC9hcHBsZXQtZGVzYz4NCiAgPGpmeDpqYXZhZngtZGVzYyAgd2lkdGg9IjgwMCIgaGVpZ2h0PSI2MDAiIG1haW4tY2xhc3M9ImNsaWVudC5DbGllbnQiICBuYW1lPSJjbGllbnQiIC8+DQogIDx1cGRhdGUgY2hlY2s9ImFsd2F5cyIvPg0KPC9qbmxwPg0K'
+            },
+            {
+                javafx : '8.0+',
+                jvmargs : '-Djava.library.path="C:\Users\Acer\Desktop\Project\64-bit\jnetpcap-1.4.r1425-1.win64\jnetpcap-1.4.r1425" '
+            },
+            {}
+        );
+    }
+    <!-- Embed FX application into web page once page is loaded -->
+    dtjava.addOnloadCallback(javafxEmbedclient);
+</script>
+
+</head><body>
+<h2>Test page for <b>client</b></h2>
+  <b>Webstart:</b> <a href='client.jnlp' onclick="return launchApplication('client.jnlp');">click to launch this app as webstart</a><br><hr><br>
+
+  <!-- Applet will be inserted here -->
+  <div id='javafx-app-placeholder'></div>
+</body></html>

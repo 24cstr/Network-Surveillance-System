@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="serverwithacc.jnlp">
+  <information>
+    <title>serverwithacc</title>
+    <vendor>Acer</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" java-vm-args="-Djava.library.path="C:\Users\Acer\Desktop\Project\jnetpcap\jnetpcap-1.3.0" "  href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="lib\Medusa-4.7.jar" size="1360904" download="eager" />
+    <jar href="lib\controlsfx-8.40.10.jar" size="954085" download="eager" />
+    <jar href="lib\javax.mail.jar" size="603572" download="eager" />
+    <jar href="lib\jnetpcap.jar" size="326364" download="eager" />
+    <jar href="lib\mysql-connector-java-3.1.14-bin.jar" size="459094" download="eager" />
+    <jar href="serverwithacc.jar" size="109533" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="serverwithacc" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="server8.Server"  name="serverwithacc" />
+  <update check="always"/>
+</jnlp>

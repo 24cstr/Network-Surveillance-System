@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="724.0" prefWidth="906.0" styleClass="width" stylesheets="@gui.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.DashboardController">
+   <children>
+      <Pane layoutX="22.0" layoutY="39.0" prefHeight="329.0" prefWidth="300.0" styleClass=".width">
+         <children>
+            <Label alignment="CENTER" layoutY="7.0" prefHeight="56.0" prefWidth="300.0" text="Bandwidth Usage">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="bandusedno" alignment="CENTER" layoutX="94.0" layoutY="285.0" prefHeight="17.0" prefWidth="113.0" />
+            <ProgressIndicator fx:id="bandused" layoutX="44.0" layoutY="65.0" prefHeight="200.0" prefWidth="213.0" progress="0.5" />
+            <Separator layoutX="297.0" layoutY="141.0" orientation="VERTICAL" prefHeight="200.0" />
+         </children>
+         <padding>
+            <Insets top="50.0" />
+         </padding>
+      </Pane>
+      <Pane layoutX="339.0" layoutY="41.0" prefHeight="310.0" prefWidth="206.0" styleClass=".width">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="14.0" prefHeight="56.0" prefWidth="149.0" text="Privilege Level">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ProgressBar fx:id="p1" layoutX="45.0" layoutY="79.0" prefHeight="18.0" prefWidth="28.0" progress="0.0" />
+            <Label fx:id="unamedisp" alignment="CENTER" layoutY="127.0" prefHeight="35.0" prefWidth="206.0" text="User">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ProgressBar fx:id="p2" layoutX="73.0" layoutY="79.0" prefHeight="18.0" prefWidth="28.0" progress="0.0" />
+            <ProgressBar fx:id="p3" layoutX="101.0" layoutY="79.0" prefHeight="18.0" prefWidth="28.0" progress="0.0" />
+            <ProgressBar fx:id="p4" layoutX="129.0" layoutY="79.0" prefHeight="18.0" prefWidth="28.0" progress="0.0" />
+            <Button alignment="CENTER" layoutX="38.0" layoutY="173.0" mnemonicParsing="false" onMouseClicked="#reqprvchange" prefHeight="47.0" prefWidth="130.0" text="Request to Change Privilege Level" textAlignment="CENTER" wrapText="true" />
+         </children>
+         <padding>
+            <Insets top="50.0" />
+         </padding>
+      </Pane>
+      <Separator layoutX="319.0" layoutY="39.0" orientation="VERTICAL" prefHeight="200.0" />
+      <Label alignment="CENTER" layoutX="701.0" layoutY="624.0" prefHeight="35.0" prefWidth="149.0" text="Session Time">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Separator layoutX="603.0" layoutY="42.0" orientation="VERTICAL" prefHeight="329.0" prefWidth="6.0" />
+      <Label layoutX="677.0" layoutY="63.0" prefHeight="27.0" prefWidth="136.0" text="Communication">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="ftbutton" layoutX="693.0" layoutY="105.0" mnemonicParsing="false" onAction="#fcpanechange" text="File transfer">
+         <toggleGroup>
+            <ToggleGroup fx:id="fileorchat" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="chatbutton" layoutX="693.0" layoutY="131.0" mnemonicParsing="false" onAction="#fcpanechange" prefHeight="17.0" prefWidth="58.0" selected="true" text="Chat" toggleGroup="$fileorchat" />
+      <Button fx:id="lout" layoutX="810.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="25.0" prefWidth="72.0" text="Log Out" />
+      <GridPane fx:id="ftchtpane" layoutX="609.0" layoutY="200.0" prefHeight="342.0" prefWidth="293.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Pane fx:id="chatpane" prefHeight="346.0" prefWidth="293.0">
+               <children>
+                  <TextArea fx:id="senmsg" layoutX="72.0" layoutY="227.0" prefHeight="47.0" prefWidth="200.0" promptText="Type here to send message" />
+                  <Label layoutX="14.0" layoutY="20.0" text="Message" />
+                  <Button layoutX="80.0" layoutY="286.0" mnemonicParsing="false" onMouseClicked="#sendmesg" prefHeight="25.0" prefWidth="184.0" text="Send " />
+                  <TextArea fx:id="rcmsg" editable="false" layoutX="72.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" promptText="Recieved message will be shown  Here" wrapText="true" />
+               </children>
+            </Pane>
+         </children>
+      </GridPane>
+      <ChoiceBox fx:id="touser" layoutX="669.0" layoutY="161.0" onMouseClicked="#userlistget" prefHeight="25.0" prefWidth="191.0" />
+      <Label layoutX="628.0" layoutY="166.0" prefHeight="17.0" prefWidth="20.0" text="To" />
+      <TextArea fx:id="blcweb" editable="false" layoutX="17.0" layoutY="537.0" prefHeight="173.0" prefWidth="645.0" />
+      <Label alignment="CENTER" layoutX="17.0" layoutY="502.0" prefHeight="35.0" prefWidth="645.0" text="Blocked Websites">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="sestime" alignment="CENTER" layoutX="715.0" layoutY="666.0" prefHeight="35.0" prefWidth="121.0" />
+      <Label alignment="CENTER" layoutX="712.0" layoutY="542.0" prefHeight="27.0" prefWidth="121.0" text="Status">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="accstatus" alignment="CENTER" layoutX="719.0" layoutY="577.0" prefHeight="35.0" prefWidth="113.0">
+         <contextMenu>
+            <ContextMenu onShowing="#chechblocked">
+              <items>
+                <MenuItem fx:id="unblcmenu" mnemonicParsing="false" onAction="#requnblocacc" text="Request to Unblock Account" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </Label>
+   </children>
+   <padding>
+      <Insets right="100.0" top="50.0" />
+   </padding>
+</Pane>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="499.0" styleClass="thebackground" stylesheets="@gui.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.RegisterController">
+   <children>
+      <Pane layoutX="74.0" layoutY="60.0" prefHeight="458.0" prefWidth="351.0" styleClass="theback">
+         <children>
+            <TextField fx:id="fname" layoutX="60.0" layoutY="29.0" prefHeight="34.0" prefWidth="231.0" promptText="Your Full Name" />
+            <TextField fx:id="uname" layoutX="60.0" layoutY="86.0" prefHeight="34.0" prefWidth="231.0" promptText="Desired Username" />
+            <PasswordField fx:id="pass" layoutX="60.0" layoutY="138.0" prefHeight="34.0" prefWidth="231.0" promptText="Choose Password" />
+            <PasswordField fx:id="repass" layoutX="60.0" layoutY="190.0" prefHeight="34.0" prefWidth="231.0" promptText="Re-type password" />
+            <TextField fx:id="email" layoutX="60.0" layoutY="247.0" prefHeight="34.0" prefWidth="231.0" promptText="Enter Your Email Id" />
+            <Button fx:id="regb" layoutX="60.0" layoutY="354.0" mnemonicParsing="false" onMouseClicked="#registeruser" prefHeight="50.0" prefWidth="231.0" text="Register" />
+            <TextField fx:id="mobno" layoutX="60.0" layoutY="302.0" prefHeight="34.0" prefWidth="231.0" promptText="Enter Your Mobile Number" />
+            <Label fx:id="errmsg" layoutX="60.0" layoutY="421.0" prefHeight="25.0" prefWidth="231.0" />
+         </children>
+      </Pane>
+      <Label layoutX="100.0" layoutY="6.0" text="Registration Form">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Label>
+      <Button layoutX="370.0" layoutY="499.0" mnemonicParsing="false" onMouseClicked="#backtologin" prefHeight="34.0" prefWidth="129.0" text="Back to Login" />
+   </children>
+</Pane>
